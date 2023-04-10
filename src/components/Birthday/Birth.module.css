@@ -1,0 +1,73 @@
+.center {
+  display: flex;
+  margin-top: 2%;
+}
+
+.title {
+  font-size: 1.3rem;
+  opacity: 0.65;
+}
+
+.inputBox input,
+.inputBox select {
+  position: relative;
+  width: 6rem;
+  height: 2.5rem;
+  border: 1px solid #111;
+  background: transparent;
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+}
+
+.inputBox select {
+  width: 10rem;
+}
+
+.inputBox label {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #000000b1;
+  transition: 0.5s;
+  cursor: text;
+}
+
+.month {
+  right: 6.5rem;
+  width: 3.9rem;
+}
+
+.year {
+  right: 3.6rem;
+}
+
+.day {
+  right: 4.2rem;
+  width: 2.7rem;
+}
+
+#fill {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  background-color: rgb(251, 251, 251);
+  transform: translateY(-1.25rem) translateX(-0.2rem);
+}
+
+.inputBox input:focus ~ label,
+.inputBox select:focus ~ label {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  color: #37b92b;
+  background-color: rgb(251, 251, 251);
+  transform: translateY(-1.25rem) translateX(-0.2rem);
+}
+
+.inputBox input:focus,
+.inputBox select:focus {
+  border: 1px solid #37b92b;
+}

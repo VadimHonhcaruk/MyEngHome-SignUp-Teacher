@@ -1,0 +1,11 @@
+.image {
+  width: 50%;
+  height: fit-content;
+}
+
+.contImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
