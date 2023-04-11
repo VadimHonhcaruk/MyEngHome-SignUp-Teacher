@@ -26,8 +26,13 @@ export const MainContent = () => {
 
     return (
         <div className={c.main}>
-            <FirstPage isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} />
-            <ImageRight />
+            <div className={c.flex}>
+                <FirstPage isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} />
+                <ImageRight />
+            </div>
+            <div className={c.buttCont}>
+                <button className={c.btnGrad}>Далі</button>
+            </div>
         </div>
     )
 }

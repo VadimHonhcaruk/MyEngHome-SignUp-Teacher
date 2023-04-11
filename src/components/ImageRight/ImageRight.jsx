@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../images/logo_meh_mono.png';
+import image from '../../images/who.png';
 import c from './ImageRight.module.css';
 
 export const ImageRight = () => {

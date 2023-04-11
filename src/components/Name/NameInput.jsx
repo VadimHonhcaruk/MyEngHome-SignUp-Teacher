@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { onChangeInputName } from '../../function/nameInput';
 import c from './NameInput.module.css';
+import { Error } from '../Error';
 
 export const NameInput = ({ clearErrors, watch, setError, register, errors }) => {
 
     const [firstName, setFirstName] = useState('');
     const [secondName, setSecondName] = useState('');
-
 
 
     return (
@@ -21,5 +21,6 @@ export const NameInput = ({ clearErrors, watch, setError, register, errors }) =>
                     <label htmlFor="secondName" className={c.fin} id={secondName !== '' && c.fill} >Прізвище</label>
                 </div>
             </div>
+            {(errors?.firstName || errors?.secondName) ? <p><Error />&nbsp;&nbsp;<span>{errors?.firstName?.message || errors?.secondName?.message}</span></p> : <></>}
         </>)
 }

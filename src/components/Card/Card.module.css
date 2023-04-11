@@ -1,62 +1,56 @@
 .center {
   display: flex;
-  margin-top: 2%;
-  height: 6vh;
+  margin-top: 4%;
+  margin-bottom: 0.5%;
 }
 
-.inputBox {
-  margin-right: 5%;
+.crd {
+  color: #000000b1;
 }
 
-.inputBox input {
+.center input {
   position: relative;
   width: 15rem;
   height: 2.5rem;
-  border: 1px solid #000000;
+  border: 1px solid #111;
   background: transparent;
   padding: 10px;
+  padding-left: 15px;
   border-radius: 4px;
   box-sizing: border-box;
   outline: none;
   font-size: 16px;
-  color: #000000;
   transition: 0.5s;
+  color: #000000;
 }
 
-.inputBox label {
+.center label {
   position: relative;
-  left: 1rem;
-  bottom: 2rem;
   display: inline-block;
   font-size: 1.2rem;
   color: #000000b1;
   transition: 0.5s;
   cursor: text;
-}
-
-.fir {
-  width: 2.2rem;
-}
-
-.fin {
-  width: 5.3rem;
+  right: 14rem;
+  top: 0.5rem;
+  height: 1rem;
 }
 
 #fill {
   font-size: 1rem;
   letter-spacing: 0.2rem;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.25rem);
+  transform: translateY(-1.25rem) translateX(-0.2rem);
 }
 
-.inputBox input:focus ~ label {
+.center input:focus ~ label {
   font-size: 1rem;
   letter-spacing: 0.2rem;
   color: #37b92b;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.25rem);
+  transform: translateY(-1.25rem) translateX(-0.2rem);
 }
 
-.inputBox input:focus {
+.center input:focus {
   border: 1px solid #37b92b;
 }

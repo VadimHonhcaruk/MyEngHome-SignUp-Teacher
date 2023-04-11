@@ -1,11 +1,11 @@
 .image {
-  width: 50%;
-  height: fit-content;
+  width: 70%;
 }
 
 .contImage {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80%;
+  height: 70%;
+  width: 50%;
 }

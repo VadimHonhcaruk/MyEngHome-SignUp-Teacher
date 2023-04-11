@@ -22,6 +22,7 @@
   font-size: 16px;
   color: #000000;
   text-align: center;
+  transition: 0.5s;
 }
 
 .inputBox select {
@@ -55,7 +56,7 @@
   font-size: 1rem;
   letter-spacing: 0.2rem;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.25rem) translateX(-0.2rem);
+  transform: translateY(-1.4rem) translateX(-0.2rem);
 }
 
 .inputBox input:focus ~ label,
@@ -64,7 +65,7 @@
   letter-spacing: 0.2rem;
   color: #37b92b;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.25rem) translateX(-0.2rem);
+  transform: translateY(-1.4rem) translateX(-0.2rem);
 }
 
 .inputBox input:focus,
