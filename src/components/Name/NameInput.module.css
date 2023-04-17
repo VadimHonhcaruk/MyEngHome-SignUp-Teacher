@@ -8,6 +8,10 @@
   margin-right: 5%;
 }
 
+.errorStyle {
+  margin-right: 5%;
+}
+
 .inputBox input {
   position: relative;
   width: 15rem;
@@ -16,7 +20,20 @@
   background: transparent;
   padding: 10px;
   border-radius: 4px;
-  box-sizing: border-box;
+  outline: none;
+  font-size: 16px;
+  color: #000000;
+  transition: 0.5s;
+}
+
+.errorStyle input {
+  border: 1px solid #c22222;
+  position: relative;
+  width: 15rem;
+  height: 2.5rem;
+  background: transparent;
+  padding: 10px;
+  border-radius: 4px;
   outline: none;
   font-size: 16px;
   color: #000000;
@@ -30,6 +47,17 @@
   display: inline-block;
   font-size: 1.2rem;
   color: #000000b1;
+  transition: 0.5s;
+  cursor: text;
+}
+
+.errorStyle label {
+  position: relative;
+  left: 1rem;
+  bottom: 2rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #c22222;
   transition: 0.5s;
   cursor: text;
 }
@@ -59,4 +87,21 @@
 
 .inputBox input:focus {
   border: 1px solid #37b92b;
+}
+
+.errorStyle input:focus ~ label {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  color: #37b92b;
+  background-color: rgb(251, 251, 251);
+  transform: translateY(-1.25rem);
+}
+
+.errorStyle input:focus {
+  border: 1px solid #37b92b;
+}
+
+.p {
+  margin-top: -2.7%;
+  color: #c22222;
 }

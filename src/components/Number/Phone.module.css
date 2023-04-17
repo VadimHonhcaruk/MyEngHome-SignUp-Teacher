@@ -1,4 +1,5 @@
-.center {
+.center,
+.errorStyle {
   display: flex;
   margin-top: 4%;
   margin-bottom: 2%;
@@ -10,7 +11,8 @@
   cursor: pointer;
 }
 
-.center input {
+.center input,
+.errorStyle input {
   position: relative;
   width: 15rem;
   height: 2.5rem;
@@ -26,7 +28,12 @@
   color: #000000;
 }
 
-.center label {
+.errorStyle input {
+  border: 1px solid #c22222;
+}
+
+.center label,
+.errorStyle label {
   position: relative;
   display: inline-block;
   font-size: 1.2rem;
@@ -45,7 +52,8 @@
   transform: translateY(-1.25rem) translateX(-0.2rem);
 }
 
-.center input:focus ~ label {
+.center input:focus ~ label,
+.errorStyle input:focus ~ label {
   font-size: 1rem;
   letter-spacing: 0.2rem;
   color: #37b92b;
@@ -53,6 +61,12 @@
   transform: translateY(-1.25rem) translateX(-0.2rem);
 }
 
-.center input:focus {
+.center input:focus,
+.errorStyle input:focus {
   border: 1px solid #37b92b;
+}
+
+.p {
+  color: #c22222;
+  margin-top: -1.7%;
 }
