@@ -9,6 +9,13 @@
   color: #3ecf30;
   font-size: 1.2rem;
   cursor: pointer;
+  padding: 0.2% 1%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+}
+
+.phn:hover {
+  background-color: #edf9ed;
 }
 
 .center input,

@@ -34,7 +34,7 @@ export const Card = ({ setError, clearErrors, register, errors }) => {
     return (<>
         <div className={errorCard ? c.errorStyle : c.center}>
             <input id='card' onInput={cardInputChange}{...register("card", { onBlur: () => { validateCardNumber(card, setError, clearErrors, errors) }, onChange: (e) => { setCard(e.target.value); } },)} value={card} type="text" name="card" maxLength="19" />
-            <label htmlFor="card" id={card !== '' && c.fill}>Банківська карта</label>
+            <label htmlFor="card" id={card !== '' ? c.fill : undefined}>Банківська карта</label>
         </div>
         {errorCard ? <p className={c.p}><Error />&nbsp;&nbsp;Неправильний номер карти</p> : <span className={c.crd}>Карта для переказу коштів за надані послуги</span>}
     </>

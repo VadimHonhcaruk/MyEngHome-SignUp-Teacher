@@ -8,6 +8,9 @@ function App() {
     window.addEventListener('load', () => {
       const preloader = document.querySelector('.container');
       preloader.classList.add('hidden');
+      setTimeout(() => {
+        preloader.classList.add('hiddenAll');
+      }, 2000);
     });
   }, [])
 

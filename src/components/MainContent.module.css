@@ -23,6 +23,12 @@
   color: white;
   border: none;
   border-radius: 10px;
+  transition: all 1s ease-out;
+  cursor: pointer;
+}
+
+.btnGrad:hover {
+  filter: drop-shadow(2px 2px 4px rgb(99, 97, 97));
 }
 
 .flex {
