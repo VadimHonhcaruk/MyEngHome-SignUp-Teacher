@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import c from './Birth.module.css';
 import { Error } from '../Error';
+import { onlyNumb } from '../../function/onlyNumb';
 
 export const Birth = ({ ageUnderEi, isValideDate, register, errors, now }) => {
 
@@ -12,7 +13,7 @@ export const Birth = ({ ageUnderEi, isValideDate, register, errors, now }) => {
             <span className={c.title}>Дата народження</span>
             <div className={c.center}>
                 <div className={errors?.day ? c.errorStyle : c.inputBox}>
-                    <input id="day" value={day} {...register("day", { onChange: (e) => { setDay(e.target.value); }, required: "Заповніть поле", pattern: { value: /^(0?[1-9]|[12]\d|3[01])$/, message: "Поле може містити тільки цифри від 1 до 31" }, })} name="day" maxLength="2" />
+                    <input id="day" value={day} onInput={onlyNumb} {...register("day", { onChange: (e) => { setDay(e.target.value); }, required: "Заповніть поле", pattern: { value: /^(0?[1-9]|[12]\d|3[01])$/, message: "Поле може містити тільки цифри від 1 до 31" }, })} name="day" maxLength="2" />
                     <label htmlFor="day" className={c.day} id={day !== '' && c.fill}>День</label>
                 </div>
                 <div className={errors?.month ? c.errorStyle : c.inputBox}>
@@ -34,7 +35,7 @@ export const Birth = ({ ageUnderEi, isValideDate, register, errors, now }) => {
                     <label htmlFor="month" className={c.month} id={month !== '' && c.fill}>Місяць</label>
                 </div>
                 <div className={errors?.year ? c.errorStyle : c.inputBox}>
-                    <input id="year" value={year} {...register("year", { onChange: (e) => { setYear(e.target.value); }, required: "Заповніть поле", pattern: { value: /^\d{4}$/, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 5}` }, min: { value: now.getFullYear() - 100, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 5}` }, max: { value: now.getFullYear() - 5, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 5}` } })} name="year" maxLength="4" />
+                    <input id="year" value={year} onInput={onlyNumb} {...register("year", { onChange: (e) => { setYear(e.target.value); }, required: "Заповніть поле", pattern: { value: /^\d{4}$/, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` }, min: { value: now.getFullYear() - 100, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` }, max: { value: now.getFullYear() - 5, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` } })} name="year" maxLength="4" />
                     <label htmlFor="year" className={c.year} id={year !== '' && c.fill}>Рік</label>
                 </div>
             </div>

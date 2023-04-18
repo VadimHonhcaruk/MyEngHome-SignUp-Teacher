@@ -13,7 +13,7 @@ export const FirstPage = ({ ageUnderEi, clearErrors, watch, setError, register, 
             <NameInput clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} />
             <Birth ageUnderEi={ageUnderEi} isValideDate={isValideDate} register={register} errors={errors} now={now} />
             <Phone clearErrors={clearErrors} register={register} errors={errors} />
-            <Card register={register} />
+            <Card clearErrors={clearErrors} setError={setError} register={register} errors={errors} />
         </div>
     )
 }
