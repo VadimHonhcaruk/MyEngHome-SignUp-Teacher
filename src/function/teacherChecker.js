@@ -7,16 +7,20 @@ export const teacherChecker = async (phone, PATH, TOKEN, AUTH) => {
             'Authorization': AUTH
         },
         mode: 'cors'
-    });
+    }) || undefined;
 }
 
 export const teacherPhoneCheck = async (phone, PATH, TOKEN, AUTH) => {
-    const response = await teacherChecker(phone, PATH, TOKEN, AUTH);
-    if (response.status === 404) {
-        return true;
-    } else if (response.status === 200) {
-        return false;
-    } else {
-        return 'error';
+    try {
+        const response = await teacherChecker(phone, PATH, TOKEN, AUTH);
+        if (response.status === 404) {
+            return true;
+        } else if (response.status === 200) {
+            return false;
+        } else {
+            return undefined;
+        }
+    } catch (error) {
+        return undefined;
     }
 }

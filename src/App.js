@@ -1,9 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Header } from './components/Header/Header';
 import { MainContent } from './components/MainContent';
+import { Modal } from './components/Modal/Modal';
 
 function App() {
+
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false);
+
   useEffect(() => {
     window.addEventListener('load', () => {
       const preloader = document.querySelector('.container');
@@ -16,8 +21,9 @@ function App() {
 
   return (
     <div className="App">
+      {isModalVisible && <Modal isSuccess={isSuccess} />}
       <Header />
-      <MainContent />
+      <MainContent setIsModalVisible={setIsModalVisible} setIsSuccess={setIsSuccess} />
     </div>
   );
 }

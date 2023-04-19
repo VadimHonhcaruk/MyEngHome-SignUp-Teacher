@@ -4,11 +4,11 @@ import { useForm } from 'react-hook-form';
 import { FirstPage } from './FirstPage/FirstPage';
 import { ImageRight } from './ImageRight/ImageRight';
 import { useBirthdate } from '../hooks/useBirthdate';
-import { teacherChecker, teacherPhoneCheck } from '../function/teacherChecker';
+import { teacherPhoneCheck } from '../function/teacherChecker';
 
 const now = new Date();
 
-export const MainContent = () => {
+export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
 
     const [ageUnderEi, setAgeUnderEi] = useState(false);
     const [isValideDate, setIsValideDate] = useState(true);
@@ -33,18 +33,22 @@ export const MainContent = () => {
     const PATH_HANDLER = process.env.REACT_APP_API_PATH_HANDLER;
 
     useBirthdate(watch, now, setIsValideDate, setAgeUnderEi);
-    //errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || !isValideDate || errors?.card
+
     const validCont = async () => {
         if (errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || !isValideDate || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || watch('phone') === '' || !isValideDate || errors?.card) {
             return;
         } else {
             const response = await teacherPhoneCheck(phone.replace(/[^+\d]/g, ''), PATH, TOKEN, AUTH);
             if (response === true) {
-                console.log("YES!")
+
             } else if (response === false) {
                 setError('phone', { type: 'custom', message: 'Даний номер телефону вже зареєстровано' })
-            } else {
-                console.log("error");
+            } else if (response === undefined) {
+                setIsModalVisible(true);
+                setIsSuccess(false);
+                setTimeout(() => {
+                    setIsModalVisible(false);
+                }, 5000);
             }
         }
     }
