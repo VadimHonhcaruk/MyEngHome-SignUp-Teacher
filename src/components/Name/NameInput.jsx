@@ -3,11 +3,7 @@ import { onChangeInputName } from '../../function/nameInput';
 import c from './NameInput.module.css';
 import { Error } from '../Error';
 
-export const NameInput = ({ clearErrors, watch, setError, register, errors }) => {
-
-    const [firstName, setFirstName] = useState('');
-    const [secondName, setSecondName] = useState('');
-
+export const NameInput = ({ firstName, setFirstName, setSecondName, secondName, clearErrors, watch, setError, register, errors }) => {
 
     return (
         <>

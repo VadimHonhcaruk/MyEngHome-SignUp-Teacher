@@ -1,13 +1,9 @@
-import { useState } from 'react';
 import c from './Birth.module.css';
 import { Error } from '../Error';
 import { onlyNumb } from '../../function/onlyNumb';
 
-export const Birth = ({ ageUnderEi, isValideDate, register, errors, now }) => {
+export const Birth = ({ day, setDay, month, setMonth, year, setYear, ageUnderEi, isValideDate, register, errors, now }) => {
 
-    const [day, setDay] = useState('');
-    const [month, setMonth] = useState('');
-    const [year, setYear] = useState('');
     return (
         <>
             <span className={c.title}>Дата народження</span>

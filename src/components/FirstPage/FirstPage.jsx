@@ -5,13 +5,13 @@ import { Birth } from '../Birthday/Birth';
 import { Phone } from '../Number/Phone';
 import { Card } from '../Card/Card';
 
-export const FirstPage = ({ phone, setPhone, ageUnderEi, clearErrors, watch, setError, register, errors, now, isValideDate }) => {
+export const FirstPage = ({ day, setDay, month, setMonth, year, setYear, firstName, setFirstName, setSecondName, secondName, card, setCard, phone, setPhone, ageUnderEi, clearErrors, watch, setError, register, errors, now, isValideDate }) => {
     return (
         <div className={c.cont}>
             <h2>Реєстрація викладача</h2>
             <h3>Надайте персональні дані</h3>
-            <NameInput clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} />
-            <Birth ageUnderEi={ageUnderEi} isValideDate={isValideDate} register={register} errors={errors} now={now} />
+            <NameInput firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} />
+            <Birth day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} ageUnderEi={ageUnderEi} isValideDate={isValideDate} register={register} errors={errors} now={now} />
             <Phone phone={phone} setPhone={setPhone} clearErrors={clearErrors} register={register} errors={errors} />
             <Card clearErrors={clearErrors} setError={setError} register={register} errors={errors} />
         </div>
