@@ -23,7 +23,7 @@ export const Password = ({ passwordCheck, setPasswordCheck, password, setPasswor
     return (<>
         <div className={errors?.password ? c.errorStyle : c.center}>
             <div>
-                <input id='password' {...register("password", { onBlur: () => { samePassCheck() }, onChange: (e) => { setPassword(e.target.value); }, required: { value: true, message: "Заповніть поле" }, pattern: { value: /^[A-Za-z0-9!@#$%^&*()_+={}[\]|\\:;"'<,>.?/]{8,100}$/, message: `Пароль має містити лише літери (a-z), цифри (0-9) та символи` } })} value={password} type={passOneHide ? "text" : "password"} name="password" minLength='8' maxLength="100" />
+                <input id='password' {...register("password", { onBlur: () => { samePassCheck() }, onChange: (e) => { setPassword(e.target.value); }, required: { value: true, message: "Заповніть поле" }, pattern: { value: /^[A-Za-z0-9!@#$%^&*()_+={}[\]|\\:;"'<,>.?/]{8,100}$/, message: `Пароль має містити мінімум 8 літер (a-z), цифр (0-9) та символів` } })} value={password} type={passOneHide ? "text" : "password"} name="password" minLength='8' maxLength="100" />
                 <label className={c.wiPass} htmlFor="password" id={password !== '' ? c.fill : undefined}>Пароль</label>
                 <span onClick={() => setPassOneHide(prev => !prev)} className={c.hide}> {passOneHide ? <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

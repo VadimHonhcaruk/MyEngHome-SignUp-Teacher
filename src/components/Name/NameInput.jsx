@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { onChangeInputName } from '../../function/nameInput';
 import c from './NameInput.module.css';
 import { Error } from '../Error';

@@ -8,7 +8,8 @@ export const Phone = ({ phone, setPhone, register, errors, clearErrors }) => {
 
     useEffect(() => {
         const queryParams = new URLSearchParams(window.location.search);
-        let x = (queryParams.get("phoneNumber").replace(/\D/g, '')).match(/(\d{0,5})(\d{0,3})(\d{0,2})(\d{0,2})/);
+        let x = queryParams.get("phoneNumber");
+        if (x) { x = x.replace(/\D/g, '').match(/(\d{0,5})(\d{0,3})(\d{0,2})(\d{0,2})/) } else return;
         setQueryPhone(!x[2] ? '+' + x[1] : '+38 (' + x[1][2] + x[1][3] + x[1][4] + ') ' + x[2] + (x[3] ? ' ' + x[3] : '') + (x[4] ? ' ' + x[4] : ''));
     }, [])
 

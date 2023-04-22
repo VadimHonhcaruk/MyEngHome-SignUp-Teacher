@@ -5,7 +5,7 @@ import { FirstPage } from './FirstPage/FirstPage';
 import { SecondPage } from './SecondPage/SecondPage';
 import { ImageRight } from './ImageRight/ImageRight';
 import { useBirthdate } from '../hooks/useBirthdate';
-import { teacherPhoneCheck } from '../function/teacherChecker';
+import { teacherPOST, teacherEmailCheck, teacherPhoneCheck } from '../function/teacherChecker';
 
 const now = new Date();
 
@@ -18,8 +18,6 @@ export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordCheck, setPasswordCheck] = useState('');
-    const [checkerOne, setCheckerOne] = useState(false);
-    const [checkerTwo, setCheckerTwo] = useState(false);
     const [day, setDay] = useState('');
     const [month, setMonth] = useState('');
     const [year, setYear] = useState('');
@@ -34,7 +32,6 @@ export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
         formState: {
             errors,
         },
-        handleSubmit,
         watch,
 
     } = useForm({ mode: 'onBlur' });
@@ -47,7 +44,7 @@ export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
     useBirthdate(watch, now, setIsValideDate, setAgeUnderEi);
 
     const validCont = async () => {
-        if (errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || !isValideDate || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || watch('phone') === '' || !isValideDate || errors?.card) {
+        if (ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || !isValideDate || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || phone === '' || !isValideDate || errors?.card) {
             return;
         } else {
             const response = await teacherPhoneCheck(phone.replace(/[^+\d]/g, ''), PATH, TOKEN, AUTH);
@@ -65,17 +62,49 @@ export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
         }
     }
 
+    const registerFunc = async () => {
+        const response = await teacherEmailCheck(email, PATH, TOKEN, AUTH);
+        if (response === true) {
+            const responsePOST = await teacherPOST({ cardNumber: card, dateOfBirth: `${year}-${month}-${day}`, email: email, firstname: firstName, lastname: secondName, password: password, phoneNumber: ('+' + phone.replace(/\D/g, '')) }, PATH, TOKEN, AUTH, 'user');
+            if (responsePOST.status !== 200) {
+                setIsSuccess(false);
+                setIsModalVisible(true);
+                setTimeout(() => setIsModalVisible(false), 5000);
+                return;
+            } else {
+                setIsSuccess(true);
+                setIsModalVisible(true);
+                setTimeout(() => setIsModalVisible(false), 5000);
+                await teacherPOST({ email: email, firstname: firstName, lastname: secondName, password: password, phoneNumber: ('+' + phone.replace(/\D/g, '')) }, PATH_HANDLER, TOKEN, AUTH, 'teacher');
+                setTimeout(() => {
+                    window.location.href = 'https://www.facebook.com/MyEnglishHomeBoryspil';
+                }, 3000);
+                return;
+            }
+        } else if (response === false) {
+            setError('email', { type: 'custom', message: 'Дану ел. пошту вже зареєстровано' })
+            return;
+        } else {
+            setIsModalVisible(true);
+            setIsSuccess(false);
+            setTimeout(() => {
+                setIsModalVisible(false);
+            }, 5000);
+            return;
+        }
+    }
+
     return (
         <div className={c.main}>
             <div className={c.flex}>
-                {page === 1 ? <FirstPage phone={phone} setPhone={setPhone} ageUnderEi={ageUnderEi} isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} card={card} setCard={setCard} /> : <SecondPage passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} setCheckerOne={setCheckerOne} setCheckerTwo={setCheckerTwo} />}
+                {page === 1 ? <FirstPage phone={phone} setPhone={setPhone} ageUnderEi={ageUnderEi} isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} card={card} setCard={setCard} /> : <SecondPage passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />}
                 <ImageRight page={page} />
             </div>
             {page === 1 ? <div className={c.buttCont}>
                 <button className={c.btnGrad} onClick={validCont}>Далі</button>
             </div> : <div className={c.buttContReg}>
                 <div className={c.buttBack} onClick={() => setPage(1)}>Назад</div>
-                <button className={c.btnGrad + ' ' + c.btnGradReg}>Зареєструватись</button>
+                <button className={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
                 <div></div>
             </div>}
         </div>

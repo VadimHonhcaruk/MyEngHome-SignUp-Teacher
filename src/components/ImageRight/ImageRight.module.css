@@ -1,17 +1,17 @@
 .image {
-  width: 70%;
+  width: 90%;
 }
 
 .contImage {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70%;
+  height: 90%;
   width: 40%;
 }
 
 .imageG {
-  width: 60%;
+  width: 80%;
 }
 
 .contImageG {
