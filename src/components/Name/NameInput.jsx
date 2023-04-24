@@ -12,7 +12,7 @@ export const NameInput = ({ firstName, setFirstName, setSecondName, secondName, 
                     <label htmlFor="firstName" className={c.fir} id={firstName !== '' ? c.fill : undefined} >Ім'я</label>
                 </div>
                 <div className={errors?.secondName ? c.errorStyle : c.inputBox}>
-                    <input id="secondName" value={secondName} {...register('secondName', { onChange: (e) => { setSecondName(e.target.value); onChangeInputName(watch('secondName'), setError, clearErrors, 'secondName') }, required: { value: true, message: " Заповніть поле" }, maxLength: 30, pattern: { value: /^(?!.*(?:['-]){2,})(?!['-])(?!.*(?:['-]$))(?:[А-Яа-яЁёІіЇїЄє']+['-]?)*[А-Яа-яЁёІіЇїЄє']+$/, message: " Поле може містити тільки літери, апостроф та тире" }, })} type="text" maxLength="30" />
+                    <input id="secondName" className={c.sec} value={secondName} {...register('secondName', { onChange: (e) => { setSecondName(e.target.value); onChangeInputName(watch('secondName'), setError, clearErrors, 'secondName') }, required: { value: true, message: " Заповніть поле" }, maxLength: 30, pattern: { value: /^(?!.*(?:['-]){2,})(?!['-])(?!.*(?:['-]$))(?:[А-Яа-яЁёІіЇїЄє']+['-]?)*[А-Яа-яЁёІіЇїЄє']+$/, message: " Поле може містити тільки літери, апостроф та тире" }, })} type="text" maxLength="30" />
                     <label htmlFor="secondName" className={c.fin} id={secondName !== '' ? c.fill : undefined} >Прізвище</label>
                 </div>
             </div>

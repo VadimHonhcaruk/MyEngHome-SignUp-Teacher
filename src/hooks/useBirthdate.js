@@ -22,6 +22,6 @@ export const useBirthdate = (watch, now, setIsValideDate, setAgeUnderEi) => {
         if (today < dobnow) {
             setAge(prev => prev - 1);
         };
-        age < 18 ? setAgeUnderEi(true) : setAgeUnderEi(false);
+        age < 15 ? setAgeUnderEi(true) : setAgeUnderEi(false);
     }, [now, setAgeUnderEi, setIsValideDate, dateOfBirthWatch, age, watch])
 }

@@ -13,7 +13,7 @@
 .errorStyle input {
   position: relative;
   width: 15rem;
-  height: 2.5rem;
+  height: 2.7rem;
   border: 1px solid #111;
   background: transparent;
   padding: 10px;
@@ -43,23 +43,29 @@
   height: 1rem;
 }
 
+.errorStyle label {
+  color: #c22222;
+}
+
 #fill {
   font-size: 1rem;
-  letter-spacing: 0.2rem;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.25rem) translateX(-0.2rem);
+  transform: translateY(-1.2rem) translateX(-0.2rem);
 }
 
 .center input:focus ~ label,
 .errorStyle input:focus ~ label {
   font-size: 1rem;
-  letter-spacing: 0.2rem;
   color: #37b92b;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.25rem) translateX(-0.2rem);
+  transform: translateY(-1.2rem) translateX(-0.2rem);
 }
 
 .center input:focus,
 .errorStyle input:focus {
   border: 1px solid #37b92b;
+}
+
+.p {
+  color: #c22222;
 }

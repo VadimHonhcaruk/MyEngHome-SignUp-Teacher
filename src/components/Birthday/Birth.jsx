@@ -31,11 +31,11 @@ export const Birth = ({ day, setDay, month, setMonth, year, setYear, ageUnderEi,
                     <label htmlFor="month" className={c.month} id={month !== '' ? c.fill : undefined}>Місяць</label>
                 </div>
                 <div className={errors?.year ? c.errorStyle : c.inputBox}>
-                    <input id="year" value={year} onInput={onlyNumb} {...register("year", { onChange: (e) => { setYear(e.target.value); }, required: "Заповніть поле", pattern: { value: /^\d{4}$/, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` }, min: { value: now.getFullYear() - 100, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` }, max: { value: now.getFullYear() - 5, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` } })} name="year" maxLength="4" />
+                    <input id="year" className={c.marg} value={year} onInput={onlyNumb} {...register("year", { onChange: (e) => { setYear(e.target.value); }, required: "Заповніть поле", pattern: { value: /^\d{4}$/, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` }, min: { value: now.getFullYear() - 100, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` }, max: { value: now.getFullYear() - 5, message: `Поле може містити значення від ${now.getFullYear() - 100} до ${now.getFullYear() - 15}` } })} name="year" maxLength="4" />
                     <label htmlFor="year" className={c.year} id={year !== '' ? c.fill : undefined}>Рік</label>
                 </div>
             </div>
-            <p className={c.p}>{(errors?.year || errors?.day || errors?.month || !isValideDate || ageUnderEi) ? <Error /> : null}&nbsp;&nbsp;{errors?.year?.message || errors?.day?.message || errors?.month?.message || (!isValideDate && "Такої дати не існує") || (ageUnderEi && 'Ви неповнолітні')}</p>
+            <p className={c.p}>{(errors?.year || errors?.day || errors?.month || !isValideDate || ageUnderEi) ? <Error /> : null}&nbsp;&nbsp;{errors?.year?.message || errors?.day?.message || errors?.month?.message || (!isValideDate && "Такої дати не існує") || (ageUnderEi && 'Вам повинно бути мінімум 15 років')}</p>
         </>
     )
 }

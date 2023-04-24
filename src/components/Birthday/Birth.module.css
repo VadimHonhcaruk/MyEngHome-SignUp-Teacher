@@ -8,11 +8,15 @@
   opacity: 0.65;
 }
 
+.marg {
+  margin-left: -10%;
+}
+
 .inputBox input,
 .inputBox select {
   position: relative;
-  width: 6rem;
-  height: 2.5rem;
+  width: 5.5rem;
+  height: 2.7rem;
   border: 1px solid #111;
   background: transparent;
   padding: 10px;
@@ -26,7 +30,8 @@
 }
 
 .inputBox select {
-  width: 10rem;
+  width: 9rem;
+  text-align: left;
 }
 
 .inputBox label {
@@ -39,22 +44,22 @@
 }
 
 .month {
-  right: 6.5rem;
-  width: 3.9rem;
+  right: 8rem;
+  width: 2.9rem;
 }
 
 .year {
-  right: 3.6rem;
+  right: 4.6rem;
+  width: 1.3rem;
 }
 
 .day {
-  right: 4.2rem;
-  width: 2.7rem;
+  right: 4.7rem;
+  width: 2.1rem;
 }
 
 #fill {
   font-size: 1rem;
-  letter-spacing: 0.2rem;
   background-color: rgb(251, 251, 251);
   transform: translateY(-1.4rem) translateX(-0.2rem);
 }
@@ -62,7 +67,6 @@
 .inputBox input:focus ~ label,
 .inputBox select:focus ~ label {
   font-size: 1rem;
-  letter-spacing: 0.2rem;
   color: #37b92b;
   background-color: rgb(251, 251, 251);
   transform: translateY(-1.4rem) translateX(-0.2rem);
@@ -76,7 +80,6 @@
 .errorStyle input:focus ~ label,
 .errorStyle select:focus ~ label {
   font-size: 1rem;
-  letter-spacing: 0.2rem;
   color: #37b92b;
   background-color: rgb(251, 251, 251);
   transform: translateY(-1.4rem) translateX(-0.2rem);
@@ -100,8 +103,8 @@
 .errorStyle select {
   border: 1px solid #c22222;
   position: relative;
-  width: 6rem;
-  height: 2.5rem;
+  width: 5.5rem;
+  height: 2.7rem;
   background: transparent;
   padding: 10px;
   border-radius: 4px;
@@ -114,11 +117,12 @@
 }
 
 .p {
-  margin-top: 0.3%;
+  margin-top: 0.5%;
   margin-bottom: -2%;
   color: #c22222;
 }
 
 .errorStyle select {
-  width: 10rem;
+  width: 9rem;
+  text-align: left;
 }

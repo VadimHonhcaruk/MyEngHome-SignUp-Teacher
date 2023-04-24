@@ -1,8 +1,5 @@
 .check {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 1.2rem;
+  font-size: 1.24rem;
 }
 
 .customCheckbox {
@@ -15,6 +12,7 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
+  letter-spacing: 0.05rem;
 }
 .customCheckbox + label::before {
   content: "";

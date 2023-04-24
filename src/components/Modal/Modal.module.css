@@ -1,12 +1,9 @@
 .modal {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
+  width: 99.6%;
+  height: 89.6%;
+  border-radius: 0 0 10px 10px;
+  background-color: rgb(251, 251, 251);
+  padding: 2%;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -36,15 +33,12 @@
 .success,
 .congrats {
   color: #3ecf30;
-  text-shadow: #185912 0px 0px 5px, #185912 0px 0px 5px, #185912 0px 0px 5px,
-    #185912 0px 0px 5px, #185912 0px 0px 5px, #185912 0px 0px 5px;
-  font-weight: 900;
   font-family: "Blogger Sans Bold";
 }
 
 .success,
 .fail {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 .congrats,
@@ -53,8 +47,8 @@
 }
 
 .image {
-  margin-top: 4vw;
-  width: 10vw;
+  margin-top: 2vw;
+  width: 7vw;
   height: auto;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -62,7 +56,7 @@
 }
 
 .imageTrouble {
-  width: 13vw;
+  width: 9vw;
   height: auto;
   animation-name: trouble;
   animation-duration: 3s;

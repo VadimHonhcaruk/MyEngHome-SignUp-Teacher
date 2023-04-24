@@ -6,10 +6,11 @@ import { SecondPage } from './SecondPage/SecondPage';
 import { ImageRight } from './ImageRight/ImageRight';
 import { useBirthdate } from '../hooks/useBirthdate';
 import { teacherPOST, teacherEmailCheck, teacherPhoneCheck } from '../function/teacherChecker';
+import { Modal } from './Modal/Modal';
 
 const now = new Date();
 
-export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
+export const MainContent = () => {
 
     const [ageUnderEi, setAgeUnderEi] = useState(false);
     const [isValideDate, setIsValideDate] = useState(true);
@@ -24,6 +25,9 @@ export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
     const [firstName, setFirstName] = useState('');
     const [secondName, setSecondName] = useState('');
     const [card, setCard] = useState('');
+    const [canClick, setCanClick] = useState(true);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
     const {
         register,
@@ -44,20 +48,24 @@ export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
     useBirthdate(watch, now, setIsValideDate, setAgeUnderEi);
 
     const validCont = async () => {
-        if (ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || !isValideDate || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || phone === '' || !isValideDate || errors?.card) {
+        if (!canClick || ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || !isValideDate || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || phone === '' || !isValideDate || errors?.card) {
             return;
         } else {
+            setCanClick(false);
             const response = await teacherPhoneCheck(phone.replace(/[^+\d]/g, ''), PATH, TOKEN, AUTH);
             if (response === true) {
+                setCanClick(true);
                 setPage(2);
             } else if (response === false) {
+                setCanClick(true);
                 setError('phone', { type: 'custom', message: 'Даний номер телефону вже зареєстровано' })
             } else if (response === undefined) {
+                setCanClick(true);
                 setIsModalVisible(true);
                 setIsSuccess(false);
                 setTimeout(() => {
                     setIsModalVisible(false);
-                }, 5000);
+                }, 4000);
             }
         }
     }
@@ -95,18 +103,20 @@ export const MainContent = ({ setIsModalVisible, setIsSuccess }) => {
     }
 
     return (
-        <div className={c.main}>
-            <div className={c.flex}>
-                {page === 1 ? <FirstPage phone={phone} setPhone={setPhone} ageUnderEi={ageUnderEi} isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} card={card} setCard={setCard} /> : <SecondPage passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />}
-                <ImageRight page={page} />
+        isModalVisible ? <Modal isSuccess={isSuccess} /> :
+            <div className={c.main}>
+                <div className={c.flex}>
+                    {page === 1 ? <FirstPage phone={phone} setPhone={setPhone} ageUnderEi={ageUnderEi} isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} card={card} setCard={setCard} /> : <SecondPage passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />}
+                    <ImageRight page={page} />
+                </div>
+                {page === 1 ? <div className={c.buttCont}>
+                    <button className={c.btnGrad} onClick={validCont}>Далі</button>
+                </div> : <div className={c.buttContReg}>
+                    <div className={c.buttBack} onClick={() => setPage(1)}>Назад</div>
+                    <button className={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
+                    {/* <div className={c.buttBack + ' ' + c.buttInvis}>Назад</div> */}
+                    <div></div>
+                </div>}
             </div>
-            {page === 1 ? <div className={c.buttCont}>
-                <button className={c.btnGrad} onClick={validCont}>Далі</button>
-            </div> : <div className={c.buttContReg}>
-                <div className={c.buttBack} onClick={() => setPage(1)}>Назад</div>
-                <button className={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
-                <div></div>
-            </div>}
-        </div>
     )
 }

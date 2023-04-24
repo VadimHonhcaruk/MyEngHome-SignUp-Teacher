@@ -35,9 +35,9 @@ export const Password = ({ passwordCheck, setPasswordCheck, password, setPasswor
                     <path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.1764 9.33193 10.4303 9.86932 9.88818" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>}</span>
             </div><div>
-                <input id='passwordCheck' {...register("passwordCheck", { onBlur: () => { samePassCheck() }, onChange: (e) => { setPasswordCheck(e.target.value); }, required: { value: true, message: "Заповніть поле" } })} value={passwordCheck} type={passTwoHide ? "text" : "password"} name="passwordCheck" minLength='8' maxLength="100" />
+                <input id='passwordCheck' className={c.marg} {...register("passwordCheck", { onBlur: () => { samePassCheck() }, onChange: (e) => { setPasswordCheck(e.target.value); }, required: { value: true, message: "Заповніть поле" } })} value={passwordCheck} type={passTwoHide ? "text" : "password"} name="passwordCheck" minLength='8' maxLength="100" />
                 <label className={c.wiPassTw} htmlFor="passwordCheck" id={passwordCheck !== '' ? c.fill : undefined}>Підтвердити</label>
-                <span onClick={() => setPassTwoHide(prev => !prev)} className={c.hide}>{passTwoHide ? <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span onClick={() => setPassTwoHide(prev => !prev)} className={c.hide2}>{passTwoHide ? <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M1 12C1 12 5 20 12 20C19 20 23 12 23 12" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     <circle cx="12" cy="12" r="3" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
