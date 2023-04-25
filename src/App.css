@@ -26,7 +26,7 @@ body {
 }
 
 .App {
-  width: 55vw;
+  width: 49vw;
   height: 60vh;
   display: flex;
   flex-direction: column;

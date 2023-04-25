@@ -114,7 +114,6 @@ export const MainContent = () => {
                 </div> : <div className={c.buttContReg}>
                     <div className={c.buttBack} onClick={() => setPage(1)}>Назад</div>
                     <button className={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
-                    {/* <div className={c.buttBack + ' ' + c.buttInvis}>Назад</div> */}
                     <div></div>
                 </div>}
             </div>
