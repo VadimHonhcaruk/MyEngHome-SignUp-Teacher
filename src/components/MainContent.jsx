@@ -7,6 +7,7 @@ import { ImageRight } from './ImageRight/ImageRight';
 import { useBirthdate } from '../hooks/useBirthdate';
 import { teacherPOST, teacherEmailCheck, teacherPhoneCheck } from '../function/teacherChecker';
 import { Modal } from './Modal/Modal';
+import { transformString } from '../function/transformString';
 
 const now = new Date();
 
@@ -83,7 +84,7 @@ export const MainContent = () => {
                 setIsSuccess(true);
                 setIsModalVisible(true);
                 setTimeout(() => setIsModalVisible(false), 5000);
-                await teacherPOST({ email: email, firstname: firstName, lastname: secondName, password: password, phoneNumber: ('+' + phone.replace(/\D/g, '')) }, PATH_HANDLER, TOKEN, AUTH, 'teacher');
+                await teacherPOST({ email: email, firstname: transformString(firstName), lastname: transformString(secondName), password: password, phoneNumber: ('+' + phone.replace(/\D/g, '')) }, PATH_HANDLER, TOKEN, AUTH, 'teacher');
                 setTimeout(() => {
                     window.location.href = 'https://www.facebook.com/MyEnglishHomeBoryspil';
                 }, 3000);
@@ -113,7 +114,7 @@ export const MainContent = () => {
                     <button className={c.btnGrad} onClick={validCont}>Далі</button>
                 </div> : <div className={c.buttContReg}>
                     <div className={c.buttBack} onClick={() => setPage(1)}>Назад</div>
-                    <button className={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
+                    <button className={errors?.email || errors?.password || password !== passwordCheck || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || password !== passwordCheck || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
                     <div></div>
                 </div>}
             </div>

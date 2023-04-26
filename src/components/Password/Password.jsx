@@ -8,13 +8,16 @@ export const Password = ({ passwordCheck, setPasswordCheck, password, setPasswor
     const [passTwoHide, setPassTwoHide] = useState(false);
 
     const samePassCheck = () => {
-        if (password === '' || passwordCheck === '') {
+        if (password === '' || passwordCheck === '' || errors?.password) {
+            console.log('CHEC1')
             return;
         }
 
         if (password !== passwordCheck) {
+            console.log('CHECk2')
             setError('password', { type: 'custom', message: 'Паролі не збігаються' });
         } else {
+            console.log('CHECk3')
             clearErrors('password');
         }
     }

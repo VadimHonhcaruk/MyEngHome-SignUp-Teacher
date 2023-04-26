@@ -7,18 +7,17 @@
   align-items: center;
   justify-content: center;
   height: 90%;
-  width: 40%;
+  width: 45%;
 }
 
 .imageG {
-  width: 70%;
+  width: 90%;
 }
 
 .contImageG {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 90%;
-  width: 40%;
-  margin-top: 5%;
+  width: 30%;
 }

@@ -1,7 +1,7 @@
 .center,
 .errorStyle {
   display: flex;
-  margin-top: 4%;
+  margin-top: 5%;
   margin-bottom: 2%;
 }
 
@@ -21,8 +21,8 @@
 .center input,
 .errorStyle input {
   position: relative;
-  width: 15rem;
-  height: 2.7rem;
+  width: 17rem;
+  height: 3rem;
   border: 1px solid #111;
   background: transparent;
   padding: 10px;
@@ -30,9 +30,10 @@
   border-radius: 4px;
   box-sizing: border-box;
   outline: none;
-  font-size: 16px;
+  font-size: 1.4rem;
   transition: 0.5s;
   color: #000000;
+  box-shadow: 0.7px 0.7px 0.5px rgba(0, 0, 0, 0.36);
 }
 
 .errorStyle input {
@@ -43,11 +44,11 @@
 .errorStyle label {
   position: relative;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #000000b1;
   transition: 0.5s;
   cursor: text;
-  right: 14rem;
+  right: 16rem;
   top: 0.5rem;
   height: 1rem;
 }
@@ -78,6 +79,7 @@
 .p {
   color: #c22222;
   margin-top: -1.1%;
+  font-size: 1.08rem;
 }
 
 .mail {

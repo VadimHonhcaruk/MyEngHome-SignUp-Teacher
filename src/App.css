@@ -26,8 +26,8 @@ body {
 }
 
 .App {
-  width: 49vw;
-  height: 60vh;
+  width: 51vw;
+  height: 63vh;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,11 +1,16 @@
-h3 {
-  margin-top: 2%;
+.h3 {
   font-family: "Blogger Sans Bold";
   font-weight: 200;
+  margin-bottom: 5%;
+  font-size: 1.35rem;
 }
 
-h2,
-h3 {
+.h2 {
+  font-size: 1.7rem;
+}
+
+.h2,
+.h3 {
   letter-spacing: 1px;
 }
 

@@ -4,7 +4,7 @@
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 1.48rem;
   opacity: 0.65;
 }
 
@@ -15,36 +15,37 @@
 .inputBox input,
 .inputBox select {
   position: relative;
-  width: 5.5rem;
-  height: 2.7rem;
+  width: 5.7rem;
+  height: 3rem;
   border: 1px solid #111;
   background: transparent;
   padding: 10px;
   border-radius: 4px;
   box-sizing: border-box;
   outline: none;
-  font-size: 16px;
+  font-size: 1.4rem;
   color: #000000;
   text-align: center;
   transition: 0.5s;
+  box-shadow: 0.7px 0.7px 0.5px rgba(0, 0, 0, 0.36);
 }
 
 .inputBox select {
-  width: 9rem;
+  width: 10rem;
   text-align: left;
 }
 
 .inputBox label {
   position: relative;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #000000b1;
   transition: 0.5s;
   cursor: text;
 }
 
 .month {
-  right: 8rem;
+  right: 9rem;
   width: 2.9rem;
 }
 
@@ -61,7 +62,7 @@
 #fill {
   font-size: 1rem;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.4rem) translateX(-0.2rem);
+  transform: translateY(-1.7rem) translateX(-0.2rem);
 }
 
 .inputBox input:focus ~ label,
@@ -69,7 +70,7 @@
   font-size: 1rem;
   color: #37b92b;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.4rem) translateX(-0.2rem);
+  transform: translateY(-1.7rem) translateX(-0.2rem);
 }
 
 .inputBox input:focus,
@@ -82,7 +83,7 @@
   font-size: 1rem;
   color: #37b92b;
   background-color: rgb(251, 251, 251);
-  transform: translateY(-1.4rem) translateX(-0.2rem);
+  transform: translateY(-1.7rem) translateX(-0.2rem);
 }
 
 .errorStyle input:focus,
@@ -93,7 +94,7 @@
 .errorStyle label {
   position: relative;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #c22222;
   transition: 0.5s;
   cursor: text;
@@ -103,26 +104,27 @@
 .errorStyle select {
   border: 1px solid #c22222;
   position: relative;
-  width: 5.5rem;
-  height: 2.7rem;
+  width: 5.7rem;
+  height: 3rem;
   background: transparent;
   padding: 10px;
   border-radius: 4px;
   box-sizing: border-box;
   outline: none;
-  font-size: 16px;
+  font-size: 1.4rem;
   color: #000000;
   text-align: center;
   transition: 0.5s;
+  box-shadow: 0.7px 0.7px 0.5px rgba(0, 0, 0, 0.36);
 }
 
 .p {
-  margin-top: 0.5%;
+  margin-top: 1.2%;
   margin-bottom: -2%;
   color: #c22222;
 }
 
 .errorStyle select {
-  width: 9rem;
+  width: 10rem;
   text-align: left;
 }
