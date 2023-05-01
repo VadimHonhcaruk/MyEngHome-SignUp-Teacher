@@ -128,3 +128,148 @@
   width: 10rem;
   text-align: left;
 }
+
+@media all and (max-width: 1320px) {
+  .title {
+    font-size: 1.28rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 5rem;
+    height: 2.6rem;
+    font-size: 1.3rem;
+  }
+
+  .inputBox label {
+    font-size: 1.3rem;
+  }
+
+  .month {
+    right: 8.2rem;
+    bottom: 0.2rem;
+    width: 2.9rem;
+  }
+
+  .year {
+    right: 4.2rem;
+    width: 1.3rem;
+  }
+
+  .day {
+    right: 4.3rem;
+    width: 2.1rem;
+  }
+
+  #fill {
+    transform: translateY(-1.4rem) translateX(0);
+  }
+
+  .inputBox input:focus ~ label,
+  .inputBox select:focus ~ label {
+    font-size: 1rem;
+    transform: translateY(-1.4rem) translateX(0);
+  }
+
+  .errorStyle input:focus ~ label,
+  .errorStyle select:focus ~ label {
+    font-size: 1rem;
+    transform: translateY(-1.4rem) translateX(0);
+  }
+
+  .errorStyle label {
+    font-size: 1.3rem;
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 5rem;
+    height: 2.6rem;
+    font-size: 1.3rem;
+  }
+
+  .p {
+    margin-top: 1%;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 9rem;
+    height: 2.6rem;
+    padding-top: 2px;
+    padding-bottom: 0;
+  }
+}
+
+@media all and (max-width: 908px) {
+  .title {
+    font-size: 1.18rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 4.5rem;
+    height: 2.2rem;
+    font-size: 1.1rem;
+  }
+
+  .inputBox label {
+    font-size: 1.1rem;
+  }
+
+  .year {
+    right: 3.7rem;
+    width: 1.3rem;
+  }
+
+  .month {
+    right: 7.2rem;
+    bottom: 0.2rem;
+    width: 2.9rem;
+  }
+
+  .day {
+    right: 3.8rem;
+    width: 2.1rem;
+  }
+
+  #fill {
+    transform: translateY(-1.15rem) translateX(0);
+  }
+
+  .inputBox input:focus ~ label,
+  .inputBox select:focus ~ label {
+    font-size: 1rem;
+    transform: translateY(-1.15rem) translateX(0);
+  }
+
+  .errorStyle input:focus ~ label,
+  .errorStyle select:focus ~ label {
+    font-size: 1rem;
+    transform: translateY(-1.15rem) translateX(0);
+  }
+
+  .errorStyle label {
+    font-size: 1.1rem;
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 4.5rem;
+    height: 2.2rem;
+    font-size: 1.1rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 8rem;
+    height: 2.2rem;
+  }
+
+  .center {
+    margin-top: 4%;
+  }
+  .p {
+    font-size: 0.9rem;
+  }
+}

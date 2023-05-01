@@ -34,3 +34,30 @@ body {
   background: linear-gradient(90.15deg, #3ecf30 0%, #7df0ce 100%);
   border-radius: 10px 10px 10px 10px;
 }
+
+@media all and (max-width: 1640px) {
+  .App {
+    width: 55vw;
+    height: 64vh;
+  }
+}
+
+@media all and (max-width: 1520px) {
+  .App {
+    width: 62vw;
+    height: 64vh;
+  }
+}
+
+@media all and (max-width: 1168px) {
+  .App {
+    width: 72vw;
+  }
+}
+
+@media all and (max-width: 982px) {
+  .App {
+    width: 76vw;
+    height: 70vh;
+  }
+}

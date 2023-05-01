@@ -11,9 +11,6 @@
   text-align: center;
   font-family: "Blogger Sans Bold";
   opacity: 1;
-  animation-name: powerpoint;
-  animation-duration: 5s;
-  animation-iteration-count: 1;
 }
 
 @keyframes powerpoint {

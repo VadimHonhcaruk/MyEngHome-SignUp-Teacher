@@ -83,11 +83,11 @@ export const MainContent = () => {
             } else {
                 setIsSuccess(true);
                 setIsModalVisible(true);
-                setTimeout(() => setIsModalVisible(false), 5000);
+                setTimeout(() => setIsModalVisible(false), 8000);
                 await teacherPOST({ email: email, firstname: transformString(firstName), lastname: transformString(secondName), password: password, phoneNumber: ('+' + phone.replace(/\D/g, '')) }, PATH_HANDLER, TOKEN, AUTH, 'teacher');
                 setTimeout(() => {
                     window.location.href = 'https://www.facebook.com/MyEnglishHomeBoryspil';
-                }, 3000);
+                }, 5000);
                 return;
             }
         } else if (response === false) {
