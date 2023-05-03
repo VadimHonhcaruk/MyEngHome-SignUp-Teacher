@@ -140,7 +140,7 @@
   }
 }
 
-@media all and (max-width: 1320px) {
+@media all and (max-width: 908px) {
   .inputBox input,
   .errorStyle input {
     width: 11rem;
@@ -167,6 +167,7 @@
   }
 
   .p {
+    margin-top: -3.3%;
     font-size: 0.9rem;
   }
 }

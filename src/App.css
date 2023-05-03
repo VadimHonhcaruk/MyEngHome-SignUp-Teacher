@@ -61,3 +61,21 @@ body {
     height: 70vh;
   }
 }
+
+@media all and (max-height: 800px) {
+  .App {
+    height: 75vh;
+  }
+}
+
+@media all and (max-height: 740px) {
+  .App {
+    height: 80vh;
+  }
+}
+
+@media all and (max-height: 690px) {
+  .App {
+    height: 85vh;
+  }
+}

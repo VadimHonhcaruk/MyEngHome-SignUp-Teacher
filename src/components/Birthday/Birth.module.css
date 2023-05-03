@@ -273,3 +273,88 @@
     font-size: 0.9rem;
   }
 }
+
+@media all and (max-width: 798px) {
+  .month {
+    left: 0.6rem;
+    bottom: 1.8rem;
+  }
+
+  .day {
+    left: 0.5rem;
+    bottom: 1.8rem;
+  }
+}
+
+@media all and (max-width: 728px) {
+  .title {
+    font-size: 1.05rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 4.2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .inputBox label {
+    font-size: 1rem;
+  }
+
+  .year {
+    right: 3.7rem;
+    width: 1.3rem;
+  }
+
+  .month {
+    right: 7.2rem;
+    bottom: 0.2rem;
+    width: 2.9rem;
+  }
+
+  .day {
+    right: 3.8rem;
+    width: 2.1rem;
+  }
+
+  #fill {
+    transform: translateY(-1.15rem) translateX(0);
+  }
+
+  .inputBox input:focus ~ label,
+  .inputBox select:focus ~ label {
+    font-size: 1rem;
+    transform: translateY(-1.15rem) translateX(0);
+  }
+
+  .errorStyle input:focus ~ label,
+  .errorStyle select:focus ~ label {
+    font-size: 1rem;
+    transform: translateY(-1.15rem) translateX(0);
+  }
+
+  .errorStyle label {
+    font-size: 1rem;
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 4.5rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 8rem;
+    height: 2.2rem;
+  }
+
+  .center {
+    margin-top: 4%;
+  }
+  .p {
+    font-size: 0.9rem;
+  }
+}
