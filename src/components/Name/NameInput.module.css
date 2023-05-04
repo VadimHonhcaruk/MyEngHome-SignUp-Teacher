@@ -171,3 +171,46 @@
     font-size: 0.9rem;
   }
 }
+
+@media all and (max-width: 728px) {
+  .inputBox input,
+  .errorStyle input {
+    width: 10rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .inputBox label,
+  .errorStyle label {
+    bottom: 1.7rem;
+    font-size: 1rem;
+  }
+
+  #fill {
+    transform: translateY(-1rem);
+    font-size: 0.8rem;
+  }
+
+  .inputBox input:focus ~ label {
+    font-size: 0.8rem;
+    transform: translateY(-1rem);
+  }
+
+  .errorStyle input:focus ~ label {
+    font-size: 0.8rem;
+    transform: translateY(-1rem);
+  }
+
+  .p {
+    margin-top: -3.3%;
+    font-size: 0.8rem;
+  }
+
+  .fir {
+    width: 1.4rem;
+  }
+
+  .fin {
+    width: 3.2rem;
+  }
+}

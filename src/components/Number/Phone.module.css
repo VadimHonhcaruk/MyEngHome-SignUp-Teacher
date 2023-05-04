@@ -135,3 +135,38 @@
     font-size: 0.9rem;
   }
 }
+
+@media all and (max-width: 728px) {
+  .p {
+    margin-top: -1%;
+  }
+
+  .center input,
+  .errorStyle input {
+    width: 11rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .center label,
+  .errorStyle label {
+    font-size: 1rem;
+    right: 10.3rem;
+    top: 0.3rem;
+  }
+
+  #fill {
+    font-size: 0.8rem;
+    transform: translateY(-1rem) translateX(-0.2rem);
+  }
+
+  .center input:focus ~ label,
+  .errorStyle input:focus ~ label {
+    font-size: 0.8rem;
+    transform: translateY(-1rem) translateX(-0.2rem);
+  }
+
+  .p {
+    font-size: 0.8rem;
+  }
+}
