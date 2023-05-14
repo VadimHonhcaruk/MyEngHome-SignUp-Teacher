@@ -214,3 +214,17 @@
     width: 3.2rem;
   }
 }
+
+@media all and (max-width: 600px) {
+  .center {
+    display: unset;
+    margin-top: 2%;
+    height: 6vh;
+  }
+
+  .p {
+    margin-top: -5.3%;
+    font-size: 0.8rem;
+    margin-bottom: 3%;
+  }
+}

@@ -2,7 +2,7 @@ import c from './Birth.module.css';
 import { Error } from '../Error';
 import { onlyNumb } from '../../function/onlyNumb';
 
-export const Birth = ({ day, setDay, month, setMonth, year, setYear, ageUnderEi, isValideDate, register, errors, now }) => {
+export const Birth = ({ isMobile, day, setDay, month, setMonth, year, setYear, ageUnderEi, isValideDate, register, errors, now }) => {
 
     return (
         <>

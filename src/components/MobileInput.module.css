@@ -1,0 +1,67 @@
+.errorStyleMobile input,
+.inputBoxMobile input {
+  position: relative;
+  width: 90%;
+  height: 2.5rem;
+  border: 1px solid #111;
+  background: transparent;
+  padding: 3px;
+  padding-left: 15px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 1.4rem;
+  transition: 0.5s;
+  color: #000000;
+  box-shadow: 0.7px 0.7px 0.5px rgba(0, 0, 0, 0.36);
+  margin-top: 5%;
+}
+
+.errorStyleMobile input {
+  border: 1px solid #c22222;
+}
+
+.inputBoxMobile label,
+.errorStyleMobile label {
+  position: relative;
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #000000b1;
+  transition: 0.5s;
+  cursor: text;
+}
+
+.errorStyleMobile label {
+  color: #c22222;
+}
+
+#fillMobile {
+  font-size: 1rem;
+  background-color: white;
+  transform: translateY(-1rem) translateX(-0.2rem);
+}
+
+.inputBoxMobile input:focus ~ label,
+.errorStyleMobile input:focus ~ label {
+  font-size: 1rem;
+  color: #37b92b;
+  background-color: white;
+  transform: translateY(-1.15rem) translateX(-0.2rem);
+}
+
+.inputBoxMobile input:focus,
+.errorStyleMobile input:focus {
+  border: 1px solid #37b92b;
+}
+
+.fin {
+  bottom: 2.2rem;
+  left: 2rem;
+  height: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fir {
+  right: 26rem;
+  bottom: 0.2rem;
+}

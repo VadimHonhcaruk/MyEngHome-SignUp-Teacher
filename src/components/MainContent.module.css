@@ -74,3 +74,19 @@
   width: 16px;
   height: 16px;
 }
+
+@media all and (max-width: 600px) {
+  .main {
+    height: unset;
+    border-radius: unset;
+    background-color: white;
+    padding: 4%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .flex {
+    width: 90%;
+    align-items: center;
+  }
+}

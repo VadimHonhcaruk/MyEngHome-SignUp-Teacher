@@ -362,3 +362,64 @@
     margin-bottom: 1%;
   }
 }
+
+@media all and (max-width: 600px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 6.2rem;
+    height: 2.5rem;
+  }
+
+  .year {
+    right: 5rem;
+    width: 1.1rem;
+  }
+
+  .month {
+    bottom: 0rem;
+    width: 2.3rem;
+    left: -7rem;
+  }
+
+  .day {
+    width: 1.7rem;
+    bottom: 0rem;
+    left: -5rem;
+  }
+
+  #fill {
+    transform: translateY(-1.3rem) translateX(0);
+  }
+
+  .inputBox input:focus ~ label,
+  .inputBox select:focus ~ label {
+    transform: translateY(-1.3rem) translateX(0);
+  }
+
+  .errorStyle input:focus ~ label,
+  .errorStyle select:focus ~ label {
+    transform: translateY(-1.3rem) translateX(0);
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 6.2rem;
+    height: 2.5rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 8rem;
+    height: 2.5rem;
+  }
+
+  .p {
+    font-size: 0.8rem;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+  }
+}

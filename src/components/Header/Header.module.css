@@ -22,3 +22,79 @@
   flex-direction: column;
   margin: auto;
 }
+
+@media all and (max-width: 600px) {
+  .header {
+    border-radius: unset;
+    height: 9%;
+    background-color: #3ecf30;
+  }
+
+  .logoA {
+    width: 20%;
+    text-align: unset;
+    margin-left: 7%;
+  }
+
+  .flextitle {
+    margin-right: 32%;
+    color: white;
+    font-size: 1.7rem;
+    font-family: "Blogger Sans Bold";
+    font-weight: 900;
+  }
+}
+
+@media all and (max-width: 492px) {
+  .header {
+    height: 11%;
+  }
+
+  .logoA {
+    width: 25%;
+  }
+
+  .flextitle {
+    margin-right: 25%;
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width: 336px) {
+  .logoA {
+    width: 30%;
+  }
+
+  .flextitle {
+    margin-right: 15%;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .header {
+    height: 13%;
+  }
+
+  .logoA {
+    width: 30%;
+  }
+
+  .flextitle {
+    font-size: 1.4rem;
+    margin-right: 15%;
+  }
+}
+
+@media all and (max-width: 280px) {
+  .header {
+    height: 14%;
+  }
+
+  .logoA {
+    width: 30%;
+  }
+
+  .flextitle {
+    font-size: 1.2rem;
+  }
+}
