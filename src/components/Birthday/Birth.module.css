@@ -420,6 +420,205 @@
   .p {
     font-size: 0.8rem;
     margin-top: 1.5%;
-    margin-bottom: 1%;
+    margin-bottom: 4%;
+    height: 1rem;
+  }
+
+  .inputBox label,
+  .errorStyle label {
+    font-size: 1.4rem;
+  }
+}
+
+@media all and (max-width: 492px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 5.3rem;
+  }
+
+  .year {
+    right: 4.7rem;
+  }
+
+  .month {
+    left: -6.2rem;
+  }
+
+  .day {
+    left: -4.7rem;
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 5.3rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 7rem;
+  }
+
+  .inputBox label,
+  .errorStyle label {
+    font-size: 1.3rem;
+  }
+}
+
+@media all and (max-width: 438px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 4.5rem;
+  }
+
+  .year {
+    right: 4rem;
+  }
+
+  .month {
+    left: -5rem;
+  }
+
+  .day {
+    left: -4rem;
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 4.5rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 5.5rem;
+  }
+
+  .inputBox label,
+  .errorStyle label {
+    font-size: 1.2rem;
+  }
+}
+
+@media all and (max-width: 390px) {
+  .inputBox select,
+  .errorStyle select {
+    width: 8rem;
+  }
+
+  .month {
+    left: 0.5rem;
+    bottom: 2.1rem;
+  }
+
+  .day {
+    left: 0.5rem;
+    bottom: 2.1rem;
+  }
+
+  .p {
+    margin-top: -5%;
+    margin-bottom: 4%;
+    height: 1rem;
+  }
+}
+
+@media all and (max-width: 387px) {
+  .year {
+    right: 0rem;
+    bottom: 2.1rem;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 5rem;
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 5rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 6rem;
+  }
+
+  .inputBox label,
+  .errorStyle label {
+    font-size: 1.1rem;
+  }
+}
+
+@media all and (max-width: 317px) {
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    width: 4rem;
+  }
+
+  .errorStyle input,
+  .errorStyle select {
+    width: 4rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 5rem;
+  }
+
+  .inputBox label,
+  .errorStyle label {
+    font-size: 1.1rem;
+  }
+}
+
+@media all and (max-width: 266px) {
+  .inputBox input {
+    width: 3.5rem;
+  }
+
+  .errorStyle input {
+    width: 3.5rem;
+  }
+
+  .inputBox select,
+  .errorStyle select {
+    width: 4rem;
+  }
+
+  .inputBox label,
+  .errorStyle label {
+    font-size: 1rem;
+  }
+
+  .year {
+    left: 0.7rem;
+    bottom: 1.9rem;
+  }
+
+  .month {
+    left: 0.7rem;
+    bottom: 1.9rem;
+  }
+
+  .day {
+    left: 0.7rem;
+    bottom: 1.9rem;
   }
 }

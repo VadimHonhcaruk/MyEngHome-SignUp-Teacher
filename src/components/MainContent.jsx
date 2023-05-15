@@ -49,8 +49,16 @@ export const MainContent = ({ isMobile }) => {
 
     useBirthdate(watch, now, setIsValideDate, setAgeUnderEi);
 
+    const mobileOnClick = () => {
+        if (ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '') {
+            return;
+        } else {
+            setPageMobile(2);
+        }
+    }
+
     const validCont = async () => {
-        if (!canClick || ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || !isValideDate || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || phone === '' || !isValideDate || errors?.card) {
+        if (!canClick || ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || phone === '' || errors?.card) {
             return;
         } else {
             setCanClick(false);
@@ -124,9 +132,9 @@ export const MainContent = ({ isMobile }) => {
                         {pageMobile === 1 ? <FirstPage isMobile={isMobile} phone={phone} setPhone={setPhone} ageUnderEi={ageUnderEi} isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} card={card} setCard={setCard} /> : <SecondPage passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />}
                     </div>
                     {pageMobile === 1 ? <div className={c.buttCont}>
-                        <button className={c.btnGrad} onClick={validCont}>Далі</button>
+                        <button className={c.btnGrad} onClick={mobileOnClick}>Далі</button>
                     </div> : <div className={c.buttContReg}>
-                        <div className={c.buttBack} onClick={() => setPage(1)}>Назад</div>
+                        <div className={c.buttBack} onClick={() => setPageMobile(1)}>Назад</div>
                         <button className={errors?.email || errors?.password || password !== passwordCheck || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || password !== passwordCheck || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
                         <div></div>
                     </div>}
