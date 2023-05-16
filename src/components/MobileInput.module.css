@@ -78,6 +78,11 @@
   bottom: 0rem;
 }
 
+.phone {
+  bottom: 2.2rem;
+  left: 2rem;
+}
+
 @media all and (max-width: 528px) {
   .fir {
     right: 82%;

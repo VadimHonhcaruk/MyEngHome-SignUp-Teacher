@@ -8,6 +8,7 @@ import { useBirthdate } from '../hooks/useBirthdate';
 import { teacherPOST, teacherEmailCheck, teacherPhoneCheck } from '../function/teacherChecker';
 import { Modal } from './Modal/Modal';
 import { transformString } from '../function/transformString';
+import { ThirdPage } from './ThirdPage/ThirdPage';
 
 const now = new Date();
 
@@ -17,7 +18,7 @@ export const MainContent = ({ isMobile }) => {
     const [isValideDate, setIsValideDate] = useState(true);
     const [phone, setPhone] = useState('');
     const [page, setPage] = useState(1);
-    const [pageMobile, setPageMobile] = useState(1);
+    const [pageMobile, setPageMobile] = useState(3);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordCheck, setPasswordCheck] = useState('');
@@ -66,6 +67,7 @@ export const MainContent = ({ isMobile }) => {
             if (response === true) {
                 setCanClick(true);
                 setPage(2);
+                setPageMobile(3)
             } else if (response === false) {
                 setCanClick(true);
                 setError('phone', { type: 'custom', message: 'Даний номер телефону вже зареєстровано' })
@@ -129,13 +131,17 @@ export const MainContent = ({ isMobile }) => {
             </div> :
                 <div className={c.main}>
                     <div className={c.flex}>
-                        {pageMobile === 1 ? <FirstPage isMobile={isMobile} phone={phone} setPhone={setPhone} ageUnderEi={ageUnderEi} isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} card={card} setCard={setCard} /> : <SecondPage passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />}
+                        {pageMobile === 1 && <FirstPage isMobile={isMobile} phone={phone} setPhone={setPhone} ageUnderEi={ageUnderEi} isValideDate={isValideDate} now={now} clearErrors={clearErrors} watch={watch} setError={setError} register={register} errors={errors} day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} firstName={firstName} setFirstName={setFirstName} setSecondName={setSecondName} secondName={secondName} card={card} setCard={setCard} />}
+                        {pageMobile === 2 && <ThirdPage isMobile={isMobile} phone={phone} setPhone={setPhone} clearErrors={clearErrors} setError={setError} register={register} errors={errors} />}
+                        {pageMobile === 3 && <SecondPage isMobile={isMobile} passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />}
                     </div>
-                    {pageMobile === 1 ? <div className={c.buttCont}>
-                        <button className={c.btnGrad} onClick={mobileOnClick}>Далі</button>
-                    </div> : <div className={c.buttContReg}>
-                        <div className={c.buttBack} onClick={() => setPageMobile(1)}>Назад</div>
-                        <button className={errors?.email || errors?.password || password !== passwordCheck || !watch('behavior') || !watch('contract') ? c.btnGrad + ' ' + c.btnGradReg : c.btnGrad + ' ' + c.btnGradReg + ' ' + c.btnActive} onClick={errors?.email || errors?.password || password !== passwordCheck || !watch('behavior') || !watch('contract') ? null : registerFunc}>Зареєструватись</button>
+                    {pageMobile === 1 && <div className={c.buttCont}><div className={c.buttBackINVIS}>Назад</div><button className={c.btnGrad} onClick={mobileOnClick}>Далі</button></div>}
+                    {pageMobile === 2 && <div className={c.buttContReg}>
+                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(1)}>Назад</div><button className={c.btnGrad} onClick={validCont}>Далі</button></div>
+                        <div></div>
+                    </div>}
+                    {pageMobile === 3 && <div className={c.buttContReg}>
+                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(2)}>Назад</div><button className={c.btnGrad} onClick={() => { }}>Далі</button></div>
                         <div></div>
                     </div>}
                 </div>

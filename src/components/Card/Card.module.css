@@ -147,3 +147,42 @@
     font-size: 0.8rem;
   }
 }
+
+@media all and (max-width: 600px) {
+  .p,
+  .crd {
+    margin-top: -6%;
+  }
+}
+@media all and (max-width: 500px) {
+  .p,
+  .crd {
+    margin-top: -7%;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .p,
+  .crd {
+    margin-bottom: 6%;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .p,
+  .crd {
+    margin-top: -9%;
+  }
+}
+@media all and (max-width: 320px) {
+  .p,
+  .crd {
+    margin-top: -12%;
+  }
+}
+@media all and (max-width: 290px) {
+  .p,
+  .crd {
+    margin-top: -13%;
+  }
+}
