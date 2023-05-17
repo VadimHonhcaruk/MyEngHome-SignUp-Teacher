@@ -228,6 +228,10 @@
     height: 1rem;
     margin-bottom: 1%;
   }
+
+  #ma {
+    margin-top: -4%;
+  }
 }
 
 @media all and (max-width: 526px) {

@@ -80,6 +80,20 @@
   height: 16px;
 }
 
+@media all and (max-width: 1492px) {
+  .btnGrad {
+    padding: 0.1rem 1.25rem;
+    font-size: 1.8rem;
+  }
+
+  .btnGradReg {
+    text-shadow: -1px -1px 0 #43b14f, 1px -1px 0 #43b14f, -1px 1px 0 #43b14f,
+      1px 1px 0 #43b14f;
+    padding-bottom: 1%;
+    margin-right: 18%;
+  }
+}
+
 @media all and (max-width: 600px) {
   .main {
     height: unset;
@@ -116,4 +130,8 @@
     font-weight: 900;
     font-family: "Blogger Sans";
   }
+}
+
+.h3 {
+  text-align: center;
 }

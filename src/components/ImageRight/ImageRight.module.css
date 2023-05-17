@@ -21,3 +21,51 @@
   height: 90%;
   width: 30%;
 }
+
+@media all and (max-width: 1334px) {
+  .imageG {
+    width: 70%;
+  }
+
+  .contImageG {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 30%;
+  }
+}
+
+@media all and (max-width: 1328px) {
+  .imageG {
+    width: 90%;
+  }
+
+  .contImageG {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 30%;
+  }
+}
+
+@media all and (max-width: 920px) {
+  .contImageG {
+    height: 80%;
+  }
+}
+
+@media all and (max-width: 764px) {
+  .imageG {
+    width: 100%;
+  }
+
+  .contImageG {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 60%;
+    width: 30%;
+  }
+}

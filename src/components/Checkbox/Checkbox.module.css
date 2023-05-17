@@ -40,3 +40,27 @@
 .hypertext {
   color: #000000;
 }
+
+@media all and (max-width: 1350px) {
+  .check {
+    font-size: 1.1rem;
+  }
+}
+
+@media all and (max-width: 840px) {
+  .check {
+    font-size: 1rem;
+  }
+
+  .customCheckbox + label::before {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .check {
+    margin-top: 5%;
+    font-size: 1.1rem;
+  }
+}
