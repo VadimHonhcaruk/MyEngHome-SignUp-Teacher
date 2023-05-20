@@ -11,7 +11,7 @@ export const SecondPage = ({ isMobile, passwordCheck, setPasswordCheck, password
             <h3 className={c.h3}>Надайте ел. пошту та пароль для трекера</h3>
             <Email email={email} setEmail={setEmail} register={register} errors={errors} />
             <Password passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />
-            <CheckboxInputs register={register} />
+            <CheckboxInputs isMobile={isMobile} register={register} />
         </div> :
         <div className={c.cont}>
             <h3 className={c.h3}>Надайте ел. пошту та пароль для трекера</h3>
