@@ -155,17 +155,24 @@ export const MainContent = ({ isMobile }) => {
                         {pageMobile === 3 && <SecondPage isMobile={isMobile} passwordCheck={passwordCheck} setPasswordCheck={setPasswordCheck} password={password} setPassword={setPassword} email={email} setEmail={setEmail} register={register} errors={errors} setError={setError} clearErrors={clearErrors} />}
                         {pageMobile === 4 && <div><h3 className={c.h3}>Обов'язково ознайомтесь</h3><CheckboxInputs isMobile={isMobile} register={register} /></div>}
                     </div>
-                    {pageMobile === 1 && <div className={c.buttCont}><div className={c.buttBackINVIS}>Назад</div><button className={c.btnGrad} onClick={mobileOnClick}>Далі</button></div>}
+                    {pageMobile === 1 && <div className={c.buttCont}><div className={c.buttBackINVIS}>Назад</div><button className={c.btnGrad} onClick={() => { if (ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '') { return } else { setPageMobile(2) } }}>Далі</button></div>}{/*onClick={mobileOnClick}*/}
                     {pageMobile === 2 && <div className={c.buttContReg}>
-                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(1)}>Назад</div><button className={c.btnGrad} onClick={validCont}>Далі</button></div>
+                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(1)}>Назад</div><button className={c.btnGrad} onClick={() => { if (!canClick || ageUnderEi || errors?.firstName || errors?.secondName || errors?.day || errors?.month || errors?.year || errors?.phone || errors?.card || !isValideDate || watch('firstName') === '' || watch('secondName') === '' || watch('day') === '' || watch('month') === '' || watch('year') === '' || phone === '' || errorCard) { return } else { setPageMobile(3) } }}>Далі</button></div> {/*onClick={validCont}*/}
                         <div></div>
                     </div>}
                     {pageMobile === 3 && <div className={c.buttContReg}>
-                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(2)}>Назад</div><button className={c.btnGrad} onClick={errors?.email || errors?.password || password !== passwordCheck || watch('password') === '' || watch('email') === '' ? null : toFourthFunc}>Далі</button></div>
+                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(2)}>Назад</div><button className={c.btnGrad} onClick={errors?.email || errors?.password || password !== passwordCheck || watch('password') === '' || watch('email') === '' ? null : () => setPageMobile(4)}>Далі</button></div>{/*onClick={errors?.email || errors?.password || password !== passwordCheck || watch('password') === '' || watch('email') === '' ? null : toFourthFunc}*/}
                         <div></div>
                     </div>}
                     {pageMobile === 4 && <div className={c.buttContReg}>
-                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(3)}>Назад</div><button className={c.btnGrad} onClick={!watch('behavior') || !watch('contract') ? null : registerFunc}>Далі</button></div>
+                        <div className={c.buttCont}><div className={c.buttBack} onClick={() => setPageMobile(3)}>Назад</div><button className={c.btnGrad} onClick={!watch('behavior') || !watch('contract') ? null : () => {
+                            setIsSuccess(true);
+                            setIsModalVisible(true);
+                            setTimeout(() => setIsModalVisible(false), 8000);
+                            setTimeout(() => {
+                                window.location.href = 'https://www.facebook.com/MyEnglishHomeBoryspil';
+                            }, 5000);
+                        }}>Далі</button></div>{/*onClick={!watch('behavior') || !watch('contract') ? null : registerFunc}*/}
                         <div></div>
                     </div>}
                 </div>
