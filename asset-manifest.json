@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.27db4b76.css",
+    "main.js": "/react-gh-pages/static/js/main.be8e8cfc.js",
+    "static/media/congrats.png": "/react-gh-pages/static/media/congrats.38a26313feec34cf9a74.png",
+    "static/media/Blogger_Sans_Bold.otf": "/react-gh-pages/static/media/Blogger_Sans_Bold.991335f1a7842a014305.otf",
+    "static/media/Blogger_Sans.otf": "/react-gh-pages/static/media/Blogger_Sans.5fa2f7b82f0db86fbaa9.otf",
+    "static/media/trouble.png": "/react-gh-pages/static/media/trouble.5a0581f4d8a1534edf1d.png",
+    "static/media/who.png": "/react-gh-pages/static/media/who.e1dbd8cdc702e03f0a43.png",
+    "static/media/group.png": "/react-gh-pages/static/media/group.1d1bc7d11e2ecbead08c.png",
+    "static/media/Aqum.otf": "/react-gh-pages/static/media/Aqum.6fb0d881971006b429a8.otf",
+    "static/media/mobilelogo.png": "/react-gh-pages/static/media/mobilelogo.e6c9b0adb6df6fff9958.png",
+    "index.html": "/react-gh-pages/index.html",
+    "main.27db4b76.css.map": "/react-gh-pages/static/css/main.27db4b76.css.map",
+    "main.be8e8cfc.js.map": "/react-gh-pages/static/js/main.be8e8cfc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27db4b76.css",
+    "static/js/main.be8e8cfc.js"
+  ]
+}
